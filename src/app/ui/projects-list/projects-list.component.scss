@@ -1,0 +1,24 @@
+@import '../../../styles';
+
+.project {
+
+  &-title {
+    @include typography-header
+  }
+
+  &-list {
+    @include typography-text;
+    list-style: circle outside;
+    border: 1px dashed #393837;
+    padding: 20px 40px;
+    width: fit-content;
+
+    &-item {
+      margin-bottom: 10px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
