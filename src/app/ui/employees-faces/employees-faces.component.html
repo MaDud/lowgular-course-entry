@@ -1,0 +1,6 @@
+<ul class="employees-faces-list">
+  <li *ngFor="let employee of employees$ | async" class="employees-faces-item">
+    <img [src]="employee.img" [alt]="employee.name" class="employees-faces-image">
+    <p class="employees-faces-name">{{employee.name}}</p>
+  </li>
+</ul>

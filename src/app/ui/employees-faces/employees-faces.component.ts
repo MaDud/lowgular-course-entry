@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
 import { EmployeesService } from '../../services/employees.service';
 
 @Component({
-  selector: 'employee-list',
-  templateUrl: './employee-list.component.html',
-  encapsulation: ViewEncapsulation.None,
+  selector: 'employees-faces',
+  templateUrl: './employees-faces.component.html',
+  encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['./employee-list.component.scss']
+  styleUrls: ['./employees-faces.component.scss']
 })
-export class EmployeeListComponent {
+export class EmployeesFacesComponent {
   employees$ = this._employeesService.getAll()
 
   constructor(private _employeesService: EmployeesService) {

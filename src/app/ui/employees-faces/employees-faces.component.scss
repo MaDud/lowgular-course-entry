@@ -1,0 +1,20 @@
+@import '../../../styles';
+
+.employees-faces {
+
+  &-list {
+    display: inline-flex;
+    justify-content: flex-start;
+    gap: 20px;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &-item {
+    width: 15%;
+  }
+
+  &-image {
+    width:100%;
+  }
+}
