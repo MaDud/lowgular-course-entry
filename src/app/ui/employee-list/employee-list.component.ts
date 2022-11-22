@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { EmployeesService } from '../../services/employees.service';
+import { ProjectsService } from '../../services/projects.service';
 
 @Component({
   selector: 'employee-list',
@@ -13,4 +14,9 @@ export class EmployeeListComponent {
 
   constructor(private _employeesService: EmployeesService) {
   }
+
+  deleteEmployee(id: string): void {
+    this._employeesService.deleteEmployee(id).subscribe({next: () => alert('User was successfully removed')})
+  }
+
 }
