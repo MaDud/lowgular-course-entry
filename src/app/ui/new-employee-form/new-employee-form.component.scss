@@ -1,0 +1,35 @@
+@import '../../../styles';
+
+.title {
+  @include typography-header;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  margin: 0 auto;
+
+  &-input {
+    @include typography-text;
+    height: 30px;
+    border: solid 2px $primary-color;
+    border-radius:8px;
+    padding: 5px 10px;
+    outline: none;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:focus {
+      opacity: 1;
+      color: $secondary-color
+    }
+  }
+
+  &-submit-button {
+    @include button
+  }
+}

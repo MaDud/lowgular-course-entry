@@ -1,0 +1,24 @@
+<h1 class="title">Employee List</h1>
+
+<table class="table">
+  <thead class="table-header">
+    <tr class="table-row">
+      <th class="table-row-title">Id</th>
+      <th class="table-row-title">Name</th>
+      <th class="table-row-title">Email</th>
+      <th class="table-row-title">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees$ | async" class="table-row">
+      <td class="table-cell">{{employee.id}}</td>
+      <td class="table-cell">{{employee.name}}</td>
+      <td class="table-cell">{{employee.email}}</td>
+      <td class="table-cell">
+        <button (click)="onDeleteButtonClick(employee.id)" class="table-delete-button">
+          Remove employee
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

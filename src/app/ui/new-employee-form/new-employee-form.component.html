@@ -1,0 +1,8 @@
+<h1 class="title">New Employee Form</h1>
+
+<form [formGroup]="newEmployeeForm" (ngSubmit)="onSubmit(newEmployeeForm.value)" class="form">
+  <input type="text" formControlName="name" placeholder="Name" class="form-input">
+  <input type="number" formControlName="age" placeholder="Age" class="form-input">
+  <input type="number" formControlName="salary" placeholder="Salary" class="form-input">
+  <input type="submit" value="Add new employee" [disabled]="newEmployeeForm.invalid" class="form-submit-button">
+</form>

@@ -1,0 +1,40 @@
+@import '../../../styles';
+
+.title {
+  @include typography-header;
+}
+.table{
+  width: 50%;
+  border-collapse: collapse;
+  margin: 0 auto;
+
+  &-header {
+    background: $primary-color;
+    opacity: 0.6;
+
+    & .table-row {
+      @include typography-text;
+      font-weight: bold;
+      color: #ffffff;
+      border-color: rgba($primary-color, 0.6);
+      text-align: center;
+    }
+  }
+
+  &-row {
+    @include typography-text;
+    border: 2px solid $primary-color;
+    height: 50px;
+  }
+
+  &-cell {
+    text-align: center;
+  }
+
+  &-delete-button {
+    @include button;
+    height: 30px;
+    padding: 5px 10px;
+  }
+
+}

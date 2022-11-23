@@ -2,20 +2,42 @@
 
 body {
   font-family: Calibri;
-  margin: 60px
 }
 
 $title-color: #393837;
 $text-color: #6c6968;
+$primary-color: #464693;
+$secondary-color: #28286c;
 
 @mixin typography-header {
   font-size: 30px;
   line-height: 34px;
   color: $title-color;
+  text-align: center;
+  margin: 60px;
 }
 
 @mixin typography-text {
   font-size: 16px;
   line-height: 20px;
   color: $text-color
+}
+
+@mixin button {
+  background: $primary-color;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  height: 40px;
+
+  &:hover, &:disabled {
+    opacity: 0.5;
+  }
+
+  &:focus:not(disabled), &:active {
+    background: $secondary-color;
+    opacity: 1;
+  }
 }
