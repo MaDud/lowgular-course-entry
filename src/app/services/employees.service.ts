@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PersonModel } from '../model/person.model';
 import { EmployeeFormModel } from '../model/employee-form.model';
+import {ApiResponse} from "./api.response";
+import {EmployeeResponseModel} from "../model/employee-response.model";
 
 @Injectable()
 export class EmployeesService {
@@ -11,7 +13,16 @@ export class EmployeesService {
   }
 
   getAll(): Observable<PersonModel[]> {
-    return this._httpClient.get<PersonModel[]>('assets/data/people.json')
+    return this._httpClient.get<ApiResponse<EmployeeResponseModel[]>>('https://dummy.restapiexample.com/api/v1/employees').pipe(map( response => {
+      return response.data.map( employee => {
+        return {
+          personalNumber: employee.id,
+          name: employee.employee_name,
+          img: employee.profile_image,
+          mail: `${employee.employee_name}@lowgular.io`
+        }
+      })
+    }))
   }
 
   createNewEmployee(employee: EmployeeFormModel): Observable<void> {

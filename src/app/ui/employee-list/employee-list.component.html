@@ -2,7 +2,7 @@
 <ul *ngIf="employees$ | async as data; else empty" class="employee-list">
   <li *ngFor="let employee of data" class="employee-list-item">
     {{ employee.personalNumber }}: {{ employee.name }}, Email: {{ employee.mail}}
-    <button (click)="deleteEmployee(employee.personalNumber)">Delete</button>
+    <button (click)="deleteEmployee(employee.personalNumber)">Remove me</button>
   </li>
 </ul>
 
